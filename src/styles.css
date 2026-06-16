@@ -92,3 +92,13 @@
     @apply m-0 min-w-80 bg-background text-foreground antialiased;
   }
 }
+
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
