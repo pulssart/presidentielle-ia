@@ -1,0 +1,210 @@
+{
+  "generatedAt": "2026-06-16T08:25:00.000Z",
+  "election": "Présidentielle française 2027",
+  "summary": "Classement éditorial initial basé sur sources publiques disponibles au 16 juin 2026. Le score mesure la solidité apparente du discours IA, la présence dans le programme, les mesures publiques, les garde-fous et la souveraineté technologique. Ce n'est pas une recommandation de vote.",
+  "methodology": [
+    {
+      "name": "Compréhension du sujet",
+      "weight": 30,
+      "description": "Capacité à parler des usages, des limites, des risques et des impacts économiques ou sociaux de l'IA."
+    },
+    {
+      "name": "Présence dans le programme",
+      "weight": 25,
+      "description": "Place explicite de l'IA dans les priorités, les propositions ou les documents programmatiques."
+    },
+    {
+      "name": "Mesures proposées",
+      "weight": 20,
+      "description": "Précision des mesures, faisabilité, financement ou mise en œuvre publique."
+    },
+    {
+      "name": "Éthique et société",
+      "weight": 15,
+      "description": "Traitement des risques, du travail, des libertés publiques, de la culture, de l'éducation et de la transparence."
+    },
+    {
+      "name": "Souveraineté et Europe",
+      "weight": 10,
+      "description": "Vision sur les infrastructures, les données, les modèles, la recherche française et le cadre européen."
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Gabriel Attal",
+      "party": "Renaissance",
+      "status": "déclaré",
+      "programStatus": "oui",
+      "score": 82,
+      "trend": "up",
+      "evidence": "Candidature officialisée en mai 2026. L'IA est déjà utilisée comme axe de campagne et présentée comme priorité de puissance, de formation et d'organisation politique.",
+      "risks": "Beaucoup d'éléments relèvent encore de la stratégie de campagne, pas d'un programme présidentiel complet publié.",
+      "sources": [
+        {
+          "title": "Le Monde, Attal déclare sa candidature",
+          "url": "https://www.lemonde.fr/en/politics/article/2026/05/22/2027-presidential-election-ex-pm-attal-declares-his-candidacy-hoping-to-distance-himself-from-macron_6753731_5.html"
+        },
+        {
+          "title": "RTL, plateforme IA de campagne",
+          "url": "https://www.rtl.fr/actu/politique/info-rtl-si-un-militant-ne-sait-pas-quels-arguments-donner-gabriel-attal-developpe-une-intelligence-artificielle-pour-la-presidentielle-de-2027-7900591779"
+        },
+        {
+          "title": "Dailymotion BFM, France patrie de l'IA",
+          "url": "https://www.dailymotion.com/video/xabxbzo"
+        }
+      ]
+    },
+    {
+      "name": "Édouard Philippe",
+      "party": "Horizons",
+      "status": "déclaré",
+      "programStatus": "oui",
+      "score": 70,
+      "trend": "up",
+      "evidence": "L'IA apparaît dans ses chantiers de campagne, notamment santé, école et transformation de l'État. Le cadrage est pragmatique et sectoriel.",
+      "risks": "Les propositions restent éparses et dépendent surtout de discours et d'entretiens.",
+      "sources": [
+        {
+          "title": "Info.fr, IA et santé dans le programme Philippe",
+          "url": "https://info.fr/edouard-philippe-ia-sante-formation-medecins-prevention/"
+        },
+        {
+          "title": "Génération Do It Yourself, entretien Édouard Philippe",
+          "url": "https://www.gdiy.fr/podcast/edouard-philippe/"
+        },
+        {
+          "title": "Le Monde, panorama présidentielle 2027",
+          "url": "https://www.lemonde.fr/en/les-decodeurs/article/2026/05/22/2027-french-presidential-election-who-s-already-running-who-could-be-and-key-dates_6752856_9.html"
+        }
+      ]
+    },
+    {
+      "name": "Jean-Luc Mélenchon",
+      "party": "La France insoumise",
+      "status": "possible",
+      "programStatus": "partiel",
+      "score": 61,
+      "trend": "stable",
+      "evidence": "Texte substantiel sur la pensée artificielle, les usages sociaux, la surveillance, la santé, la planification et les dépendances. Forte couche critique et philosophique.",
+      "risks": "La présence dans un programme présidentiel 2027 n'est pas stabilisée, et la candidature n'est pas certaine.",
+      "sources": [
+        {
+          "title": "Blog de Jean-Luc Mélenchon, pensée artificielle",
+          "url": "https://melenchon.fr/2025/04/07/pour-que-la-pensee-artificielle-reste-sous-protectorat-humain/"
+        },
+        {
+          "title": "Le Monde, panorama présidentielle 2027",
+          "url": "https://www.lemonde.fr/en/les-decodeurs/article/2026/05/22/2027-french-presidential-election-who-s-already-running-who-could-be-and-key-dates_6752856_9.html"
+        }
+      ]
+    },
+    {
+      "name": "Marine Tondelier",
+      "party": "Les Écologistes",
+      "status": "primaire gauche",
+      "programStatus": "partiel",
+      "score": 54,
+      "trend": "stable",
+      "evidence": "Positionnement critique sur le capitalisme numérique et les impacts culturels. Le sujet IA existe, surtout sous l'angle régulation, culture et écologie politique.",
+      "risks": "Peu de mesures présidentielles chiffrées disponibles à ce stade.",
+      "sources": [
+        {
+          "title": "Le Monde, primaire et candidats de gauche",
+          "url": "https://www.lemonde.fr/en/les-decodeurs/article/2026/05/22/2027-french-presidential-election-who-s-already-running-who-could-be-and-key-dates_6752856_9.html"
+        },
+        {
+          "title": "Instagram, IA et culture",
+          "url": "https://www.instagram.com/p/DYSE9zWCABW/?img_index=2"
+        }
+      ]
+    },
+    {
+      "name": "Jordan Bardella",
+      "party": "Rassemblement national",
+      "status": "probable",
+      "programStatus": "faible",
+      "score": 38,
+      "trend": "stable",
+      "evidence": "Candidat souvent cité côté RN. Les documents publics consultés montrent davantage un cadrage général souveraineté, sécurité et économie qu'un programme IA structuré.",
+      "risks": "Il faut distinguer posture numérique générale et vraie compréhension de l'IA. Les preuves publiques restent limitées.",
+      "sources": [
+        {
+          "title": "Le Monde, panorama présidentielle 2027",
+          "url": "https://www.lemonde.fr/en/les-decodeurs/article/2026/05/22/2027-french-presidential-election-who-s-already-running-who-could-be-and-key-dates_6752856_9.html"
+        },
+        {
+          "title": "Programme européen RN 2024",
+          "url": "https://rassemblementnational.fr/documents/202411-programme-europeennes.pdf"
+        }
+      ]
+    },
+    {
+      "name": "Marine Le Pen",
+      "party": "Rassemblement national",
+      "status": "incertain",
+      "programStatus": "faible",
+      "score": 34,
+      "trend": "down",
+      "evidence": "Présence politique majeure mais candidature incertaine. Les mentions IA identifiées sont indirectes ou peu programmatiques.",
+      "risks": "La situation judiciaire et le choix RN peuvent modifier fortement son statut.",
+      "sources": [
+        {
+          "title": "Le Monde, situation RN 2027",
+          "url": "https://www.lemonde.fr/en/politics/article/2026/06/13/2027-french-presidential-election-the-far-right-rn-s-fascination-with-la-france-insoumise-s-war-machine_6754424_5.html"
+        },
+        {
+          "title": "Rassemblement national, programme 2024",
+          "url": "https://rassemblementnational.fr/documents/202406-programme.pdf"
+        }
+      ]
+    },
+    {
+      "name": "François Ruffin",
+      "party": "Debout !",
+      "status": "primaire gauche",
+      "programStatus": "non établi",
+      "score": 28,
+      "trend": "stable",
+      "evidence": "Candidature à la primaire de gauche recensée. Aucune plateforme IA suffisamment identifiable dans les sources initiales.",
+      "risks": "Score à réviser dès publication de propositions sur travail, industrie, numérique ou services publics.",
+      "sources": [
+        {
+          "title": "Le Monde, candidats de la primaire de gauche",
+          "url": "https://www.lemonde.fr/en/les-decodeurs/article/2026/05/22/2027-french-presidential-election-who-s-already-running-who-could-be-and-key-dates_6752856_9.html"
+        }
+      ]
+    },
+    {
+      "name": "Clémentine Autain",
+      "party": "L'Après",
+      "status": "primaire gauche",
+      "programStatus": "non établi",
+      "score": 27,
+      "trend": "stable",
+      "evidence": "Candidature à la primaire de gauche recensée. Les sources initiales ne montrent pas encore de bloc programmatique IA solide.",
+      "risks": "À mettre à jour si son programme traite travail, culture, éducation ou libertés numériques.",
+      "sources": [
+        {
+          "title": "Le Monde, candidats de la primaire de gauche",
+          "url": "https://www.lemonde.fr/en/les-decodeurs/article/2026/05/22/2027-french-presidential-election-who-s-already-running-who-could-be-and-key-dates_6752856_9.html"
+        }
+      ]
+    },
+    {
+      "name": "Éric Zemmour",
+      "party": "Reconquête",
+      "status": "possible",
+      "programStatus": "non établi",
+      "score": 22,
+      "trend": "stable",
+      "evidence": "Candidat possible selon les panoramas publics. Pas de programme IA présidentiel 2027 clairement identifiable dans les sources initiales.",
+      "risks": "Le score porte sur l'absence de preuves programmatiques, pas sur la notoriété politique.",
+      "sources": [
+        {
+          "title": "Le Monde, panorama présidentielle 2027",
+          "url": "https://www.lemonde.fr/en/les-decodeurs/article/2026/05/22/2027-french-presidential-election-who-s-already-running-who-could-be-and-key-dates_6752856_9.html"
+        }
+      ]
+    }
+  ]
+}

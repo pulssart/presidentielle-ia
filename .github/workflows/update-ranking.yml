@@ -1,0 +1,34 @@
+name: Update AI ranking
+
+on:
+  schedule:
+    - cron: "10 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-ranking:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Refresh ranking with OpenAI web research
+        run: npm run update:ranking
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: gpt-5
+
+      - name: Commit updated ranking
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update presidential AI ranking"
+          file_pattern: src/data/ranking.json
