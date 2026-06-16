@@ -133,6 +133,31 @@ function Score({ value, trend, compact = false }) {
   );
 }
 
+function CandidateAvatar({ candidate }) {
+  const initials = candidate.name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2);
+
+  return (
+    <span className="inline-flex size-10 shrink-0 overflow-hidden rounded-lg border bg-muted">
+      {candidate.photoUrl ? (
+        <img
+          src={candidate.photoUrl}
+          alt={`Portrait de ${candidate.name}`}
+          className="size-full object-cover"
+          loading="lazy"
+        />
+      ) : (
+        <span className="grid size-full place-items-center font-mono text-xs font-medium text-muted-foreground">
+          {initials}
+        </span>
+      )}
+    </span>
+  );
+}
+
 function SourceList({ sources }) {
   return (
     <div className="flex flex-col gap-2">
@@ -155,7 +180,7 @@ function CandidateTable({ candidates, sorted, selectedName, onSelect }) {
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-transparent">
-            <TableHead className="w-16 pl-5">Rang</TableHead>
+            <TableHead className="w-28 pl-5">Rang</TableHead>
             <TableHead>Candidat</TableHead>
             <TableHead>Statut</TableHead>
             <TableHead>Programme</TableHead>
@@ -172,9 +197,12 @@ function CandidateTable({ candidates, sorted, selectedName, onSelect }) {
               onClick={() => onSelect(candidate.name)}
             >
               <TableCell className="pl-5">
-                <span className="inline-flex size-8 items-center justify-center rounded-lg border bg-background font-mono text-sm font-medium">
-                  {sorted.findIndex((item) => item.name === candidate.name) + 1}
-                </span>
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex size-8 items-center justify-center rounded-lg border bg-background font-mono text-sm font-medium">
+                    {sorted.findIndex((item) => item.name === candidate.name) + 1}
+                  </span>
+                  <CandidateAvatar candidate={candidate} />
+                </div>
               </TableCell>
               <TableCell>
                 <div className="flex flex-col gap-1">
@@ -216,9 +244,12 @@ function CandidateCards({ candidates, sorted, selectedName, onSelect }) {
           )}
         >
           <div className="flex items-start gap-3">
-            <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg border bg-background font-medium">
-              {sorted.findIndex((item) => item.name === candidate.name) + 1}
-            </span>
+            <div className="flex shrink-0 items-center gap-2">
+              <span className="inline-flex size-8 items-center justify-center rounded-lg border bg-background font-medium">
+                {sorted.findIndex((item) => item.name === candidate.name) + 1}
+              </span>
+              <CandidateAvatar candidate={candidate} />
+            </div>
             <div className="min-w-0 flex-1">
               <div className="truncate font-medium">{candidate.name}</div>
               <div className="text-sm text-muted-foreground">{candidate.party}</div>

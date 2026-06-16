@@ -37,6 +37,7 @@ Ajoute les nouveaux candidats s'ils existent.
 Retire les personnes qui ne sont plus plausiblement candidates.
 Utilise uniquement des sources verifiables et recentes.
 Chaque candidat doit avoir au moins une source.
+Chaque candidat doit avoir un photoUrl public si disponible, idealement une miniature Wikimedia ou une source institutionnelle stable.
 Ne donne pas un bon score parce qu'une personne est connue.
 Penalise l'absence de programme IA explicite.
 Cherche explicitement si le candidat, son equipe ou sa campagne utilise l'IA.
@@ -61,6 +62,7 @@ Retourne uniquement un JSON valide suivant exactement cette forme:
     {
       "name": "string",
       "party": "string",
+      "photoUrl": "https://...",
       "status": "déclaré | primaire gauche | probable | possible | incertain",
       "programStatus": "oui | partiel | faible | non établi",
       "aiUseStatus": "reconnu | équipe probable | non déclaré | non trouvé",
@@ -114,7 +116,7 @@ function validate(data) {
   if (data.candidates.length === 0) throw new Error("candidates cannot be empty.");
 
   for (const candidate of data.candidates) {
-    const required = ["name", "party", "status", "programStatus", "aiUseStatus", "aiUseEvidence", "score", "trend", "evidence", "risks", "sources"];
+    const required = ["name", "party", "photoUrl", "status", "programStatus", "aiUseStatus", "aiUseEvidence", "score", "trend", "evidence", "risks", "sources"];
     for (const key of required) {
       if (!(key in candidate)) throw new Error(`Missing ${key} for candidate.`);
     }
@@ -123,6 +125,9 @@ function validate(data) {
     }
     if (!Array.isArray(candidate.sources) || candidate.sources.length === 0) {
       throw new Error(`Missing sources for ${candidate.name}.`);
+    }
+    if (candidate.photoUrl && !candidate.photoUrl.startsWith("http")) {
+      throw new Error(`Invalid photoUrl for ${candidate.name}.`);
     }
     if (!["reconnu", "équipe probable", "non déclaré", "non trouvé"].includes(candidate.aiUseStatus)) {
       throw new Error(`Invalid aiUseStatus for ${candidate.name}.`);
