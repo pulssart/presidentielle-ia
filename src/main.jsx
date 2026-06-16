@@ -11,7 +11,6 @@ import {
   RefreshCw,
   Search,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -373,27 +372,10 @@ function App() {
     filtered.find((candidate) => candidate.name === selectedName) ?? filtered[0] ?? sorted[0];
 
   return (
-    <main className="relative mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-4 py-4 sm:px-6 lg:px-10">
+    <main className="relative mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-4 py-5 sm:px-6 lg:px-10">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_16%_12%,rgba(38,90,61,0.13),transparent_32%),radial-gradient(circle_at_92%_20%,rgba(165,142,82,0.12),transparent_28%)]" />
-      <header className="flex h-14 items-center justify-between border-b bg-background/70 backdrop-blur">
-        <a className="flex items-center gap-2 font-heading font-semibold" href="/presidentielle-ia/">
-          <Sparkles className="text-primary" />
-          <span>Présidentielle IA</span>
-        </a>
-        <nav className="hidden items-center gap-2 sm:flex" aria-label="Navigation">
-          <Button variant="ghost" size="sm" asChild>
-            <a href="#classement">Classement</a>
-          </Button>
-          <Button variant="ghost" size="sm" asChild>
-            <a href="#methode">Méthode</a>
-          </Button>
-          <Button variant="ghost" size="sm" asChild>
-            <a href="#sources">Sources</a>
-          </Button>
-        </nav>
-      </header>
 
-      <section className="grid items-end gap-6 py-5 lg:grid-cols-[minmax(0,1fr)_420px] lg:py-8">
+      <section className="grid items-end gap-6 py-3 lg:grid-cols-[minmax(0,1fr)_420px] lg:py-6">
         <div className="flex max-w-4xl flex-col gap-4">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="size-2 rounded-full bg-primary shadow-[0_0_0_6px_rgba(38,90,61,0.10)]" />
