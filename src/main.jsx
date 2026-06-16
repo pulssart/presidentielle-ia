@@ -68,7 +68,22 @@ const programVariants = {
   "non établi": "destructive",
 };
 
+const aiUseLabels = {
+  reconnu: "Usage reconnu",
+  "équipe probable": "Équipe probable",
+  "non déclaré": "Non déclaré",
+  "non trouvé": "Non trouvé",
+};
+
+const aiUseVariants = {
+  reconnu: "default",
+  "équipe probable": "secondary",
+  "non déclaré": "outline",
+  "non trouvé": "outline",
+};
+
 const programCount = ranking.candidates.filter((candidate) => candidate.programStatus === "oui").length;
+const aiUseCount = ranking.candidates.filter((candidate) => candidate.aiUseStatus === "reconnu").length;
 const sourceCount = ranking.candidates.reduce((count, item) => count + item.sources.length, 0);
 
 function formatDate(value) {
@@ -85,6 +100,17 @@ function ProgramBadge({ value }) {
       className={cn(value === "oui" && "bg-primary/90")}
     >
       {programLabels[value] ?? value}
+    </Badge>
+  );
+}
+
+function AiUseBadge({ value }) {
+  return (
+    <Badge
+      variant={aiUseVariants[value] ?? "outline"}
+      className={cn(value === "reconnu" && "bg-primary/90")}
+    >
+      {aiUseLabels[value] ?? value}
     </Badge>
   );
 }
@@ -133,6 +159,7 @@ function CandidateTable({ candidates, sorted, selectedName, onSelect }) {
             <TableHead>Candidat</TableHead>
             <TableHead>Statut</TableHead>
             <TableHead>Programme</TableHead>
+            <TableHead>Usage IA</TableHead>
             <TableHead className="w-56">Score</TableHead>
           </TableRow>
         </TableHeader>
@@ -160,6 +187,9 @@ function CandidateTable({ candidates, sorted, selectedName, onSelect }) {
               </TableCell>
               <TableCell>
                 <ProgramBadge value={candidate.programStatus} />
+              </TableCell>
+              <TableCell>
+                <AiUseBadge value={candidate.aiUseStatus} />
               </TableCell>
               <TableCell>
                 <Score value={candidate.score} trend={candidate.trend} />
@@ -195,6 +225,7 @@ function CandidateCards({ candidates, sorted, selectedName, onSelect }) {
               <div className="mt-3 flex flex-wrap gap-2">
                 <Badge variant="outline">{statusLabels[candidate.status] ?? candidate.status}</Badge>
                 <ProgramBadge value={candidate.programStatus} />
+                <AiUseBadge value={candidate.aiUseStatus} />
               </div>
               <div className="mt-3">
                 <Score value={candidate.score} trend={candidate.trend} compact />
@@ -224,7 +255,7 @@ function EvidencePanel({ candidate }) {
         </CardAction>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid gap-2 sm:grid-cols-3">
           <div className="rounded-lg border bg-muted/60 p-3">
             <div className="text-xs text-muted-foreground">Statut</div>
             <div className="mt-1 font-medium">{statusLabels[candidate.status] ?? candidate.status}</div>
@@ -233,7 +264,16 @@ function EvidencePanel({ candidate }) {
             <div className="text-xs text-muted-foreground">Programme IA</div>
             <div className="mt-1 font-medium">{programLabels[candidate.programStatus] ?? candidate.programStatus}</div>
           </div>
+          <div className="rounded-lg border bg-muted/60 p-3 sm:col-span-1">
+            <div className="text-xs text-muted-foreground">Usage IA</div>
+            <div className="mt-1 font-medium">{aiUseLabels[candidate.aiUseStatus] ?? candidate.aiUseStatus}</div>
+          </div>
         </div>
+
+        <section className="flex flex-col gap-2">
+          <h3 className="font-medium">Usage IA déclaré</h3>
+          <p className="text-sm leading-6 text-muted-foreground">{candidate.aiUseEvidence}</p>
+        </section>
 
         <section className="flex flex-col gap-2">
           <h3 className="font-medium">Pourquoi ce score</h3>
@@ -347,7 +387,7 @@ function App() {
               <RefreshCw className="animate-[slow-spin_10s_linear_infinite]" />
             </div>
             <Separator />
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               <div>
                 <div className="font-heading text-2xl font-semibold">{ranking.candidates.length}</div>
                 <div className="text-xs text-muted-foreground">candidats</div>
@@ -355,6 +395,10 @@ function App() {
               <div>
                 <div className="font-heading text-2xl font-semibold">{programCount}</div>
                 <div className="text-xs text-muted-foreground">programmes IA</div>
+              </div>
+              <div>
+                <div className="font-heading text-2xl font-semibold">{aiUseCount}</div>
+                <div className="text-xs text-muted-foreground">usage reconnu</div>
               </div>
               <div>
                 <div className="font-heading text-2xl font-semibold">{sourceCount}</div>

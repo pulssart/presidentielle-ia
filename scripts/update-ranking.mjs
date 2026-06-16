@@ -26,6 +26,7 @@ Classer les candidats declares, probables, possibles ou en primaire pour la proc
 3. la precision des mesures
 4. la prise en compte des risques sociaux, democratiques, culturels et economiques
 5. la souverainete technologique francaise ou europeenne
+6. le fait que le candidat, son equipe ou sa campagne ait reconnu ou non utiliser l'IA, avec source
 
 Date d'analyse: ${today}
 
@@ -38,6 +39,11 @@ Utilise uniquement des sources verifiables et recentes.
 Chaque candidat doit avoir au moins une source.
 Ne donne pas un bon score parce qu'une personne est connue.
 Penalise l'absence de programme IA explicite.
+Cherche explicitement si le candidat, son equipe ou sa campagne utilise l'IA.
+Ne considere pas un usage IA comme prouve sans source claire.
+Si l'usage est seulement journalistiquement rapporte mais pas assume par le candidat, utilise "équipe probable".
+Si aucune source fiable ne montre un usage, utilise "non trouvé".
+L'usage reconnu de l'IA doit compter dans le score, mais ne doit pas compenser seul l'absence de programme, de mesures ou de comprehension du sujet.
 Ecris en francais simple.
 
 Donnees existantes a reviser:
@@ -57,6 +63,8 @@ Retourne uniquement un JSON valide suivant exactement cette forme:
       "party": "string",
       "status": "déclaré | primaire gauche | probable | possible | incertain",
       "programStatus": "oui | partiel | faible | non établi",
+      "aiUseStatus": "reconnu | équipe probable | non déclaré | non trouvé",
+      "aiUseEvidence": "string",
       "score": 0,
       "trend": "up | stable | down",
       "evidence": "string",
@@ -106,7 +114,7 @@ function validate(data) {
   if (data.candidates.length === 0) throw new Error("candidates cannot be empty.");
 
   for (const candidate of data.candidates) {
-    const required = ["name", "party", "status", "programStatus", "score", "trend", "evidence", "risks", "sources"];
+    const required = ["name", "party", "status", "programStatus", "aiUseStatus", "aiUseEvidence", "score", "trend", "evidence", "risks", "sources"];
     for (const key of required) {
       if (!(key in candidate)) throw new Error(`Missing ${key} for candidate.`);
     }
@@ -115,6 +123,9 @@ function validate(data) {
     }
     if (!Array.isArray(candidate.sources) || candidate.sources.length === 0) {
       throw new Error(`Missing sources for ${candidate.name}.`);
+    }
+    if (!["reconnu", "équipe probable", "non déclaré", "non trouvé"].includes(candidate.aiUseStatus)) {
+      throw new Error(`Invalid aiUseStatus for ${candidate.name}.`);
     }
     for (const source of candidate.sources) {
       if (!source.title || !source.url || !source.url.startsWith("http")) {

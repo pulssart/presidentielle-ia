@@ -1,21 +1,21 @@
 {
   "generatedAt": "2026-06-16T08:25:00.000Z",
   "election": "Présidentielle française 2027",
-  "summary": "Classement éditorial initial basé sur sources publiques disponibles au 16 juin 2026. Le score mesure la solidité apparente du discours IA, la présence dans le programme, les mesures publiques, les garde-fous et la souveraineté technologique. Ce n'est pas une recommandation de vote.",
+  "summary": "Classement éditorial initial basé sur sources publiques disponibles au 16 juin 2026. Le score mesure la solidité du discours IA, la présence dans le programme, les mesures publiques, les garde-fous, la souveraineté technologique et l'usage reconnu ou non de l'IA par le candidat ou son équipe. Ce n'est pas une recommandation de vote.",
   "methodology": [
     {
       "name": "Compréhension du sujet",
-      "weight": 30,
+      "weight": 25,
       "description": "Capacité à parler des usages, des limites, des risques et des impacts économiques ou sociaux de l'IA."
     },
     {
       "name": "Présence dans le programme",
-      "weight": 25,
+      "weight": 22,
       "description": "Place explicite de l'IA dans les priorités, les propositions ou les documents programmatiques."
     },
     {
       "name": "Mesures proposées",
-      "weight": 20,
+      "weight": 18,
       "description": "Précision des mesures, faisabilité, financement ou mise en œuvre publique."
     },
     {
@@ -27,6 +27,11 @@
       "name": "Souveraineté et Europe",
       "weight": 10,
       "description": "Vision sur les infrastructures, les données, les modèles, la recherche française et le cadre européen."
+    },
+    {
+      "name": "Usage IA reconnu",
+      "weight": 10,
+      "description": "Existence de sources indiquant que le candidat, son équipe ou sa campagne utilise l'IA, et clarté avec laquelle cet usage est assumé."
     }
   ],
   "candidates": [
@@ -35,8 +40,10 @@
       "party": "Renaissance",
       "status": "déclaré",
       "programStatus": "oui",
-      "score": 82,
+      "score": 86,
       "trend": "up",
+      "aiUseStatus": "reconnu",
+      "aiUseEvidence": "RTL indique que Gabriel Attal développe une intelligence artificielle pour aider ses militants dans la campagne présidentielle.",
       "evidence": "Candidature officialisée en mai 2026. L'IA est déjà utilisée comme axe de campagne et présentée comme priorité de puissance, de formation et d'organisation politique.",
       "risks": "Beaucoup d'éléments relèvent encore de la stratégie de campagne, pas d'un programme présidentiel complet publié.",
       "sources": [
@@ -59,8 +66,10 @@
       "party": "Horizons",
       "status": "déclaré",
       "programStatus": "oui",
-      "score": 70,
+      "score": 68,
       "trend": "up",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Les sources initiales montrent des propositions sur l'IA, mais pas d'usage public clairement assumé par le candidat ou son équipe de campagne.",
       "evidence": "L'IA apparaît dans ses chantiers de campagne, notamment santé, école et transformation de l'État. Le cadrage est pragmatique et sectoriel.",
       "risks": "Les propositions restent éparses et dépendent surtout de discours et d'entretiens.",
       "sources": [
@@ -83,8 +92,10 @@
       "party": "La France insoumise",
       "status": "possible",
       "programStatus": "partiel",
-      "score": 61,
+      "score": 60,
       "trend": "stable",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Les sources initiales documentent surtout sa doctrine critique sur l'IA, sans usage de campagne clairement déclaré.",
       "evidence": "Texte substantiel sur la pensée artificielle, les usages sociaux, la surveillance, la santé, la planification et les dépendances. Forte couche critique et philosophique.",
       "risks": "La présence dans un programme présidentiel 2027 n'est pas stabilisée, et la candidature n'est pas certaine.",
       "sources": [
@@ -103,8 +114,10 @@
       "party": "Les Écologistes",
       "status": "primaire gauche",
       "programStatus": "partiel",
-      "score": 54,
+      "score": 53,
       "trend": "stable",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Les sources initiales montrent des prises de position sur l'IA, pas un usage opérationnel reconnu.",
       "evidence": "Positionnement critique sur le capitalisme numérique et les impacts culturels. Le sujet IA existe, surtout sous l'angle régulation, culture et écologie politique.",
       "risks": "Peu de mesures présidentielles chiffrées disponibles à ce stade.",
       "sources": [
@@ -123,8 +136,10 @@
       "party": "Rassemblement national",
       "status": "probable",
       "programStatus": "faible",
-      "score": 38,
+      "score": 37,
       "trend": "stable",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Aucun usage public clair de l'IA par le candidat ou son équipe n'a été identifié dans les sources initiales.",
       "evidence": "Candidat souvent cité côté RN. Les documents publics consultés montrent davantage un cadrage général souveraineté, sécurité et économie qu'un programme IA structuré.",
       "risks": "Il faut distinguer posture numérique générale et vraie compréhension de l'IA. Les preuves publiques restent limitées.",
       "sources": [
@@ -143,8 +158,10 @@
       "party": "Rassemblement national",
       "status": "incertain",
       "programStatus": "faible",
-      "score": 34,
+      "score": 33,
       "trend": "down",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Les sources initiales n'établissent pas d'usage public reconnu de l'IA par Marine Le Pen ou son équipe.",
       "evidence": "Présence politique majeure mais candidature incertaine. Les mentions IA identifiées sont indirectes ou peu programmatiques.",
       "risks": "La situation judiciaire et le choix RN peuvent modifier fortement son statut.",
       "sources": [
@@ -163,8 +180,10 @@
       "party": "Debout !",
       "status": "primaire gauche",
       "programStatus": "non établi",
-      "score": 28,
+      "score": 27,
       "trend": "stable",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Aucun usage public reconnu de l'IA n'a été identifié dans les sources initiales.",
       "evidence": "Candidature à la primaire de gauche recensée. Aucune plateforme IA suffisamment identifiable dans les sources initiales.",
       "risks": "Score à réviser dès publication de propositions sur travail, industrie, numérique ou services publics.",
       "sources": [
@@ -179,8 +198,10 @@
       "party": "L'Après",
       "status": "primaire gauche",
       "programStatus": "non établi",
-      "score": 27,
+      "score": 26,
       "trend": "stable",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Aucun usage public reconnu de l'IA n'a été identifié dans les sources initiales.",
       "evidence": "Candidature à la primaire de gauche recensée. Les sources initiales ne montrent pas encore de bloc programmatique IA solide.",
       "risks": "À mettre à jour si son programme traite travail, culture, éducation ou libertés numériques.",
       "sources": [
@@ -195,8 +216,10 @@
       "party": "Reconquête",
       "status": "possible",
       "programStatus": "non établi",
-      "score": 22,
+      "score": 21,
       "trend": "stable",
+      "aiUseStatus": "non trouvé",
+      "aiUseEvidence": "Aucun usage public reconnu de l'IA n'a été identifié dans les sources initiales.",
       "evidence": "Candidat possible selon les panoramas publics. Pas de programme IA présidentiel 2027 clairement identifiable dans les sources initiales.",
       "risks": "Le score porte sur l'absence de preuves programmatiques, pas sur la notoriété politique.",
       "sources": [
