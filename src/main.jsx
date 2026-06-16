@@ -141,19 +141,19 @@ function CandidateAvatar({ candidate }) {
     .slice(0, 2);
 
   return (
-    <span className="inline-flex size-10 shrink-0 overflow-hidden rounded-lg border bg-muted">
+    <span className="relative inline-flex size-10 shrink-0 overflow-hidden rounded-lg border bg-muted">
+      <span className="grid size-full place-items-center font-mono text-xs font-medium text-muted-foreground">
+        {initials}
+      </span>
       {candidate.photoUrl ? (
         <img
           src={candidate.photoUrl}
           alt={`Portrait de ${candidate.name}`}
-          className="size-full object-cover"
-          loading="lazy"
+          className="absolute inset-0 size-full object-cover"
+          loading="eager"
+          decoding="async"
         />
-      ) : (
-        <span className="grid size-full place-items-center font-mono text-xs font-medium text-muted-foreground">
-          {initials}
-        </span>
-      )}
+      ) : null}
     </span>
   );
 }
